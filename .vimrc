@@ -3,14 +3,15 @@
 "----------------------------------------------------------------------
 
 call plug#begin()
-  Plug 'sheerun/vim-polyglot'
-  Plug 'fatih/vim-go'
-  Plug 'scrooloose/nerdtree'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'easymotion/vim-easymotion'
-  Plug 'wincent/command-t'
+Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdcommenter'
+Plug 'easymotion/vim-easymotion'
+Plug 'wincent/command-t'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "----------------------------------------------------------------------
@@ -372,8 +373,8 @@ if has('nvim')
 endif
 
 " Shortcut to yanking to the system clipboard
-map <leader>y "*y
-map <leader>p "*p
+map <leader>y "+y
+map <leader>p "+p
 
 " Get rid of search highlights
 noremap <silent><leader>/ :nohlsearch<cr>
@@ -426,6 +427,9 @@ autocmd BufWinEnter * set foldlevel=999999
 " Airline settings
 let g:airline#extensions#tabline#enabled =1
 let g:airline_theme = 'wombat'
+
+" vim-gitgutter
+set updatetime=250
 
 " NERDTree
 let NERDTreeShowHidden=1
